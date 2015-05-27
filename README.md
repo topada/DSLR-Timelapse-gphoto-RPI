@@ -65,12 +65,13 @@ I changed my DSLR Mode to Manual (M) and did all the setup on the DSLR, although
 
 + DSLR manual mode
 + turn OFF Auto White Balance (reduce flicker)
++ turn OFF Auto Focus (reduce flicker, saves pattery power)
 + turn OFF Capture Preview in DSLR Settings (saves battery power)
 + reduce Capture Quality (e.g. JPEG NORMAL, small to save battery power)
 + avoid downloading the captured images (saves battery power)
 
 ### Example python script
-This is my example setup which is executed every minute from a crontab. Check out the call function of gphoto.
+This is my example setup which is executed every minute from a crontab. Be sure to understand, what you copy and paste, as this example includes sftp upload and my particular led setup. Check out the call function of gphoto.
 
 ```python
 import time
@@ -82,6 +83,7 @@ import RPi.GPIO as GPIO
 #call required to call gphoto script
 from subprocess import call
 
+## upload images to sftp server (not required)
 def upload(ts):
     with pysftp.Connection('server', username='usrname', password='illuminati') as sftp:
     	with sftp.cd('html/d_fhp/io-slime-mold/data'):
@@ -106,6 +108,7 @@ ts = time.time()
 TIMESTAMP = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d_%H-%M-%S")
 	
 ## DSLR PHOTO
+# call (["gphoto2","--capture-image"]) #leave images on DSLRs SD card
 call (["gphoto2","--capture-image-and-download","--filename","/home/pi/io/slime_"+TIMESTAMP+".jpg"])
 
 ## SLEEP
@@ -116,7 +119,7 @@ for ID in range(len(leds)):
 	GPIO.output(leds[ID], GPIO.LOW)
 
 ## UPLOAD / CLEANUP
-upload(TIMESTAMP)
+upload(TIMESTAMP) ## (not required)
 GPIO.cleanup()
 ```
 
@@ -135,5 +138,7 @@ cd /usr/lib/gvfs/
 
 #Deactivate the GVFS by renaming the monitor. 
 sudo mv gvfs-gphoto2-volume-monitor  gvfs-gphoto2-volume-monitor-bak
+
+#reboot the pi
+sudo reboot
 ```
- 
