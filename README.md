@@ -60,6 +60,14 @@ gphoto2 --capture-image-and-download
 #the gphoto2 filename option allows timestamps like %Y %m %d %H %M %S
 gphoto2 --capture-image-and-download  --filename /home/pi/name.jpg
 ```
+### useful tips for timelapse capture
+I changed my DSLR Mode to Manual (M) and did all the setup on the DSLR, although its possible to controll ISO, shutter speed etc. with the gphoto library. It's even possible to access the battery level from the DSLR.
+
++ DSLR manual mode
++ turn OFF Auto White Balance (reduce flicker)
++ turn OFF Capture Preview in DSLR Settings (saves battery power)
++ reduce Capture Quality (e.g. JPEG NORMAL, small to save battery power)
++ avoid downloading the captured images (saves battery power)
 
 ### Example python script
 This is my example setup which is executed every minute from a crontab. Check out the call function of gphoto.
