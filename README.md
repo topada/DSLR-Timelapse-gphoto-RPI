@@ -61,8 +61,8 @@ gphoto2 --capture-image-and-download
 gphoto2 --capture-image-and-download  --filename /home/pi/name.jpg
 ```
 
-### Call gphoto Example from python script
-This is my example setup which is executed every minute from a crontab.
+### Example python script
+This is my example setup which is executed every minute from a crontab. Check out the call function.
 
 ```python
 import time
