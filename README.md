@@ -11,6 +11,7 @@ Controlling a DSLR with the gphoto library (RaspberryPi) for timelapse shots
 #####1. Install gphoto prerequisites
 Connect to your raspberryPi via SSH and install the following librarys, required to install gphoto.
 ```bash
+# the -y flag auto-completes yes/no prompts with 'yes'
 sudo apt-get install libpopt-dev -y
 sudo apt-get install libltdl-dev -y
 sudo apt-get install libusb-dev -y
