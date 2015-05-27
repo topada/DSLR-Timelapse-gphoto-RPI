@@ -44,7 +44,7 @@ sudo make install
 ```
 
 ### Test the DSLR/RPI Setup
-**turn your ON your DSLR.** in the command-line test your setup
+**turn ON your DSLR.** in the command-line test your setup
 
 ```bash
 #auto-detect the device (useful if you need to troubleshoot)
@@ -62,7 +62,7 @@ gphoto2 --capture-image-and-download  --filename /home/pi/name.jpg
 ```
 
 ### Example python script
-This is my example setup which is executed every minute from a crontab. Check out the call function.
+This is my example setup which is executed every minute from a crontab. Check out the call function of gphoto.
 
 ```python
 import time
