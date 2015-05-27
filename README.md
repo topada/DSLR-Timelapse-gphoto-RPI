@@ -85,7 +85,7 @@ import RPi.GPIO as GPIO
 from subprocess import call
 
 ## upload images to sftp server (not required)
-def upload(ts):
+def upload(TIMESTAMP):
     with pysftp.Connection('server', username='usrname', password='illuminati') as sftp:
     	with sftp.cd('html/d_fhp/io-slime-mold/data'):
     		sftp.put('/home/pi/io/slime_'+TIMESTAMP+'.jpg')
