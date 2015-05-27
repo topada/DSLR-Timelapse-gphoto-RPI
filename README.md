@@ -121,6 +121,7 @@ GPIO.cleanup()
 ```
 
 ### Further Reading
+[short test footage physarum (15MB, 3*12s](topada.hercules.uberspace.de/d_fhp/slime-lapse01-720p.mov)
 [gphoto2 Documentation](http://www.gphoto.org/doc/manual/ref-gphoto2-cli.html)
 
 
