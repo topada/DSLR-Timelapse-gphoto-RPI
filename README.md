@@ -62,7 +62,7 @@ gphoto2 --capture-image-and-download
 gphoto2 --capture-image-and-download  --filename /home/pi/name.jpg
 ```
 ### useful tips for timelapse capture
-I changed my DSLR Mode to Manual (M) and did all the setup on the DSLR, although its possible to controll ISO, shutter speed etc. with the gphoto library. It's even possible to access the battery level from the DSLR.
+I changed my DSLR Mode to Manual (M) and did all the setup on the DSLR, although its possible to control ISO, shutter speed etc. with the gphoto library. It's even possible to access the battery level from the DSLR.
 
 + DSLR manual mode
 + turn OFF Auto White Balance (reduce flicker)
@@ -88,7 +88,7 @@ from subprocess import call
 def upload(ts):
     with pysftp.Connection('server', username='usrname', password='illuminati') as sftp:
     	with sftp.cd('html/d_fhp/io-slime-mold/data'):
-    		sftp.put('/home/pi/io/slime_'+ts+'.jpg')
+    		sftp.put('/home/pi/io/slime_'+TIMESTAMP+'.jpg')
 
 ## START
 
